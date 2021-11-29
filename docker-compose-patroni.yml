@@ -1,0 +1,58 @@
+version: "3.9"
+
+networks:
+    patroni_default: 
+        external: true
+        name: patroni_default
+services:
+    patroni1:
+        image: patroni-test:latest
+        networks: [ patroni_default ]
+        ports:
+            - 5441:5432
+            - 8091:8091
+        hostname: patroni1
+        volumes:
+          - /Users/ejrose/Documents/Projects/PostgreSQL_Patroni_Zookeper/patroni1:/data/patroni
+        environment:
+            PATRONI_API_CONNECT_PORT: 8091
+            REPLICATION_NAME: replicator 
+            REPLICATION_PASS: replpass
+            SU_NAME: postgres
+            SU_PASS: supass
+            POSTGRES_APP_ROLE_PASS: appass
+
+    patroni2:
+        image: patroni-test:latest
+        networks: [ patroni_default ]
+        ports:
+            - 5442:5432
+            - 8092:8091
+        hostname: patroni2
+        volumes:
+          - /Users/ejrose/Documents/Projects/PostgreSQL_Patroni_Zookeper/patroni2:/data/patroni
+        environment:
+            PATRONI_API_CONNECT_PORT: 8091
+            REPLICATION_NAME: replicator 
+            REPLICATION_PASS: replpass
+            SU_NAME: postgres
+            SU_PASS: supass
+            POSTGRES_APP_ROLE_PASS: appass
+
+
+    patroni3:
+        image: patroni-test:latest
+        networks: [ patroni_default ]
+        ports:
+            - 5443:5432
+            - 8093:8091
+        hostname: patroni3
+        volumes:
+          - /Users/ejrose/Documents/Projects/PostgreSQL_Patroni_Zookeper/patroni3:/data/patroni
+        environment:
+            PATRONI_API_CONNECT_PORT: 8091
+            REPLICATION_NAME: replicator 
+            REPLICATION_PASS: replpass
+            SU_NAME: postgres
+            SU_PASS: supass
+            POSTGRES_APP_ROLE_PASS: appass

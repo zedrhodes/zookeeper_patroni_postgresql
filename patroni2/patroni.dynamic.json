@@ -1,0 +1,1 @@
+{"retry_timeout": 10, "ttl": 30, "loop_wait": 10, "postgresql": {"use_pg_rewind": true}, "maximum_lag_on_failover": 1048576}
