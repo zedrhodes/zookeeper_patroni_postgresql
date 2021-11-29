@@ -1,11 +1,6 @@
 # zookeeper_patroni_postgresql
 
-Hi Brian,
-     Did some Patroni + PostgreSQL a while ago at LANL but in preparation for interviewing tomorrow decided to bone up on it, throwing docker in the mix. It ended up going pretty well so I created a project on GitHub. I invited you and will offer to invite the IXL team if they are interested 
-https://github.com/zedrhodes/zookeeper_patroni_postgresql/
-
-     I'm not sure what all I'll talk about with the interviewers or if I will get the job, but I thought I'd share the prep work in case you run into a need to dockerize / containerize a PostgreSQL + Patroni + Zookeeper with HA Proxy in front of it. 
-
+```
 Deep Dive Details: 
 
 Research ~
@@ -360,5 +355,5 @@ postgres@patroni2:/$ patronictl -c /etc/patroni.yml list patroni
 | patroni2 | 10.0.2.19 | Replica | running |  1 |         0 |
 | patroni3 | 10.0.2.6  | Replica | running |  1 |         0 |
 +----------+-----------+---------+---------+----+-----------+
-
+```
 
